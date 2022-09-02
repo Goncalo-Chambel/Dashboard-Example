@@ -44,12 +44,12 @@ for i in range(nr_rows):
 	random_name =  random_first_name + " " + random_last_name 
 	random_email = random_first_name.lower() + "." + random_last_name.lower() + str(random.choice(range(100))) + random.choice(email_domain_options)
 	random_profession = random.choice(profession_options)
-	age = max(0,int(age_distribution[i]))
+	age = min(max(0,int(age_distribution[i])),99)
 	salary = max(1000,int(salary_distribution[i]))
 	salary = int(salary + age ** random.choice(np.linspace(1.1, 2, 10)))
 	signup_date = random_date_in_range(start_date, end_date)
 	if relativedelta(end_date, start_date).months + relativedelta(end_date, start_date).years * 12 >= 3:
-		start_date = start_date + relativedelta(days=5) #just to force the exponential growth
+		start_date = start_date + relativedelta(days=1) #just to force the exponential growth
 
 	row = [random_name, random_email, age, random_gender, random_country, signup_date, random_profession, salary]
 

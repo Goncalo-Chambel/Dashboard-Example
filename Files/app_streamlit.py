@@ -63,4 +63,4 @@ buffer, col2 = st.columns([1, 20])
 
 with col2:
     st.markdown("<h5 style='text-align: center; color: black;'>Accumulated signups over time</h1>", unsafe_allow_html=True)
-    st.line_chart(accumulated_signups(get_signups(data, dt.datetime(2020, 1, 1), dt.datetime(2022,1,1))))
+    st.line_chart(accumulated_signups(get_signups(data, dt.datetime(2020, 1, 1), dt.datetime(2022,12,31))))
