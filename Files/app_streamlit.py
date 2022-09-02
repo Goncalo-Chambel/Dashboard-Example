@@ -1,9 +1,10 @@
 import streamlit as st
 from processing import *
 import pandas as pd
+from pathlib import Path
 
+data = pd.read_csv(Path(__file__).parents[0]/'data.csv')
 
-data = pd.read_csv('data.csv')
 df = pd.DataFrame()
 st.set_page_config(page_title="Dashboard",layout='wide')
 
